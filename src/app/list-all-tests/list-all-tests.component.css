@@ -1,0 +1,19 @@
+h2,th,td{
+    font-family: serif;
+}
+h2{
+    font-weight: bolder;
+}
+th{
+    font-weight: bolder;
+    font-size: large;
+}
+td{
+    font-size: medium;
+}
+table{
+    text-align: center;
+}
+button{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

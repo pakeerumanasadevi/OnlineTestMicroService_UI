@@ -1,0 +1,52 @@
+<app-home></app-home>
+<div class="container-fluid">
+    
+    <h2 align="center">User Info</h2>
+
+<table class="table table-striped" *ngIf="employees && employees.length > 0  else elseBlock">
+    <thead>
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+    <th>UserType</th>
+    <th>Test Id</th>
+    <th>Marks Scored</th>
+    <th>Total Marks</th>
+    
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees">
+            <td #id> {{e.userid}} </td>
+            <td> {{e.username}} </td>
+            <td> {{e.userType}} </td>
+            <td *ngIf="e.usertest!=null; else elsetest">{{e.usertest.testId}}</td>
+            
+            <td *ngIf="e.usertest!=null; else elseMarks">{{e.usertest.testMarksScored}}</td>
+            
+            <td *ngIf="e.usertest!=null; else elseT">{{e.usertest.testTotalMarks}} </td>
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<ng-template #elseBlock>
+    <h4 align="center"> There are no details to display! </h4>
+</ng-template>
+<td><ng-template #elsetest>
+    <p align="center">No Test</p>
+</ng-template>
+</td>
+<td>
+<ng-template #elseMarks>
+    <p align="center">-</p>
+    </ng-template>
+</td>
+
+<td>
+    <ng-template #elseT>
+        <p align="center">-</p>
+    </ng-template>
+</td>
+</div>

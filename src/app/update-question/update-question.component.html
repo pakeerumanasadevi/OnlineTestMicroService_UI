@@ -1,0 +1,79 @@
+
+<div class="container">
+    <form #updQuestionForm="ngForm" (ngSubmit)='onUpdateQuestion(updQuestionForm.value)'>
+
+        <div class="form-group">
+            <label>Question ID </label>
+            <input required minlength="1" type="number" [(ngModel)]="obj1.questionId" readonly="readonly" #Qid='ngModel'
+                name="questionId" ngModel class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Question </label>
+            <input required type="text" [(ngModel)]="obj1.questionTitle" #title='ngModel' name="questionTitle" ngModel
+            [ngClass]="{'is-invalid':title.invalid && title.touched,'is-valid':title.valid}" class="form-control">
+            <div *ngIf="title.errors" class="invalid-feedback">
+                Enter question 
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label>Option 1 </label>
+            <input required minlength="1" type="text" [(ngModel)]="obj1.optionOne" #opt1='ngModel' name="optionOne"
+            [ngClass]="{'is-invalid':opt1.invalid && opt1.touched,'is-valid':opt1.valid}"  ngModel class="form-control">
+            <div *ngIf="opt1.errors" class="invalid-feedback">
+                Enter Option 
+              </div> 
+        </div>
+
+        <div class="form-group">
+            <label>Option 2 </label>
+            <input required minlength="1" type="text" [(ngModel)]="obj1.optionTwo" #opt2='ngModel' name="optionTwo"
+            [ngClass]="{'is-invalid':opt2.invalid && opt2.touched,'is-valid':opt2.valid}" ngModel class="form-control">
+            <div *ngIf="opt2.errors" class="invalid-feedback">
+                Enter Option 
+              </div> 
+        </div>
+
+        <div class="form-group">
+            <label>Option 3 </label>
+            <input required minlength="1" type="text" [(ngModel)]="obj1.optionThree" #opt3='ngModel' name="optionThree"
+            [ngClass]="{'is-invalid':opt3.invalid && opt3.touched,'is-valid':opt3.valid}" ngModel class="form-control">
+            <div *ngIf="opt3.errors" class="invalid-feedback">
+                Enter Option 
+              </div> 
+        </div>
+
+        <div class="form-group">
+            <label>Option 4 </label>
+            <input required minlength="1" type="text" [(ngModel)]="obj1.optionFour" #opt4='ngModel' name="optionFour"
+            [ngClass]="{'is-invalid':opt4.invalid && opt4.touched,'is-valid':opt4.valid}" ngModel class="form-control">
+            <div *ngIf="opt4.errors" class="invalid-feedback">
+                Enter Option 
+              </div> 
+        </div>
+
+        <div class="form-group">
+            <label>Answer </label>
+            <input required type="text" [(ngModel)]="obj1.rightAnswer" #ans='ngModel' name="rightAnswer" ngModel
+            [ngClass]="{'is-invalid':ans.invalid && ans.touched,'is-valid':ans.valid}" class="form-control">
+            <div *ngIf="ans.errors" class="invalid-feedback">
+                Enter Answer for this question 
+              </div> 
+        </div>
+
+        <div class="form-group">
+
+            <label>Marks</label>
+
+            <input required  type="number" [(ngModel)]="obj1.questionMarks" #marks='ngModel' name="questionMarks" ngModel
+            [ngClass]="{'is-invalid':marks.invalid && marks.touched,'is-valid':marks.valid}" class="form-control">
+            <div *ngIf="marks.errors" class="invalid-feedback">
+                Enter Marks 
+              </div> 
+        </div>
+
+        
+        <input [disabled]="updQuestionForm.invalid" type="submit" value="Update" class="btn btn-success">
+
+    </form>

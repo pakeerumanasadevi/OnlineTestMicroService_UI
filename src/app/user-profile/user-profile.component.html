@@ -1,0 +1,38 @@
+<app-user-navbar></app-user-navbar>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-10 col-md-10 mb-4 card border-0 shadow">
+            <div class="card-header">
+                <h2 class="card-title">Profile</h2>
+            </div>
+            <div class="card-body">
+                <table class="table borderless">
+                    <tr>
+                        <th>User ID</th>
+                        <td>{{user.userid}}</td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td>{{user.username}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>{{user.userPhoneno}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email ID</th>
+                        <td>{{user.userEmail}}</td>
+                    </tr>
+                    <tr>
+                        <th>Test ID</th>
+                        <td *ngIf="user.usertest!=null; else elsetest">{{user.usertest.testId}}</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+<ng-template #elsetest>
+    <p>No Test Assigned</p>
+</ng-template>

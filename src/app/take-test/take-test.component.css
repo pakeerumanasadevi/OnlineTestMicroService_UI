@@ -1,0 +1,15 @@
+h2,h4{
+    font-family: 'Times New Roman', Times, serif;
+}
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+body{
+    background: linear-gradient(to bottom right, #ff33cc 0%, #ff9933 100%);
+}
+.alignleft {
+    text-align: justify; /* For Edge */
+    text-align-last: center;
+}

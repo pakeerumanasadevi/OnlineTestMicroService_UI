@@ -1,0 +1,32 @@
+<html>
+<br>
+<h3 align="center">Login</h3>
+
+<form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+
+    <div class="form-group">
+        <label>Username </label>
+        <input required type="text" #id='ngModel' name="username" ngModel placeholder="Enter Username"
+        [ngClass]="{'is-invalid':id.invalid && id.touched,'is-valid':id.valid}" class="form-control">
+        <div *ngIf='id.errors' class="invalid-feedback">
+            <div [hidden]='!id.errors.required'>
+                Provide User Name
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Password </label>
+        <input required minlength="4" type="password" #p='ngModel' name="userPassword" ngModel placeholder="Enter Password"
+        [ngClass]="{'is-invalid':p.invalid && p.touched,'is-valid':p.valid}" class="form-control">
+        <div *ngIf='p.errors' class="invalid-feedback">
+            <div [hidden]='!p.errors.required'>Provide password</div>
+        </div>
+    </div>
+
+    <input [disabled]="userForm.invalid" type="submit"  value="Login" class="btn btn-success">
+    </form>
+    <br>
+    <a class="link" routerLink="/signup"><p class="text-center">Don't have account? Signup</p></a> 
+
+</html>

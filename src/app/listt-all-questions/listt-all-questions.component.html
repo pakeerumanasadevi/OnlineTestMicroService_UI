@@ -1,0 +1,56 @@
+<app-home></app-home>
+<div class="container-fluid">
+    <h2 align="center">List of All Questions</h2>
+<table class="table table-striped" *ngIf="Ques && Ques.length > 0  else elseBlock">
+    <thead>
+    <tr>
+    <th>Question ID</th>
+    <th>Question</th>
+    <th>Option1</th>
+    <th>Option2</th>
+    <th>Option3</th>
+    <th>Option4</th>
+    <th>Correct Answer</th>
+    <th>Marks</th>
+  
+    <th>Assign</th>
+    <th>Delete</th>
+    <th>Edit</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let e of Ques">
+            <td> {{e.questionId}} </td>
+            <td> {{e.questionTitle}} </td>
+            <td> {{e.optionOne}} </td>
+            <td>{{e.optionTwo}}</td>
+            <td> {{e.optionThree}} </td>
+            <td>{{e.optionFour}}</td>
+            <td>{{e.rightAnswer}} </td>
+            <td>{{e.questionMarks}} </td>
+         <!--   <td *ngIf="e.test!=null; else elsetest">{{e.test.testId}}</td>-->
+            <td>
+                <button type="button" class="btn btn-large btn-block btn-secondary" (click)=assign(e)>Assign</button>
+             </td>
+            <td>
+                <button type="button" class="btn btn-large btn-block btn-danger" (click)=delete(e)>Delete</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-large btn-block btn-secondary" (click)=update(e)>Edit</button>
+            </td>
+            <td>
+                
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-secondary float-right" routerLink="/addQuestion"><i class="fa fa-plus" aria-hidden="true"></i> ADD</button>
+
+</div>
+
+<ng-template #elseBlock>
+    <h4 align="center"> There are no Questions to display! </h4>
+</ng-template>
+<ng-template #elsetest>
+    <p align="center">No Test</p>
+</ng-template>

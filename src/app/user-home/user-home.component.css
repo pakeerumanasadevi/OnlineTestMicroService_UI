@@ -1,0 +1,14 @@
+th,td{
+    text-align: center;
+    
+}
+h1,h2,th,td,h4{
+    font-family: 'Times New Roman', Times, serif;
+}
+th{
+    font-size: 20px;
+    font-weight: bolder;
+}
+td{
+    font-weight: bold;
+}

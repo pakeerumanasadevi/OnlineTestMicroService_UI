@@ -1,0 +1,64 @@
+<body>
+<div class="container-fluid">
+<div class="col-md-10 col-md-6 mb-4 card border-0 shadow">
+<div class="card-body">
+<form name="form" (ngSubmit)="onSubmit(f.value)" #f="ngForm" >
+<div class="container-fluid">
+    
+    <h4 class="text-right">Test ID : <b>{{testid}}</b></h4>
+    <h2 align="center">Questions</h2>
+    <div *ngFor="let q of questions;let i=index">
+        <div class="badge badge-info">Question</div>
+        <h2 class="card-title">{{q.questionTitle}}</h2>
+        <div class="row options card-text">
+            <div class="option" >
+                <input type="radio" name="{{i}}" value="{{q.optionOne}}" (change)="radioChangeHandler($event,i,q.questionId)">{{q.optionOne}}
+                <br>
+                <input type="radio" name="{{i}}" value="{{q.optionTwo}}" (change)="radioChangeHandler($event,i,q.questionId)">{{q.optionTwo}}
+                <br>
+                <input type="radio" name="{{i}}" value="{{q.optionThree}}" (change)="radioChangeHandler($event,i,q.questionId)">{{q.optionThree}}
+                <br>
+                <input type="radio" name="{{i}}" value="{{q.optionFour}}" (change)="radioChangeHandler($event,i,q.questionId)">{{q.optionFour}}
+            </div>
+        </div><br>
+    </div>
+
+   
+    <button [disabled]="!Valid" class="btn btn-success">Submit</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</body>
+<!----------------------------------------------------------------------------------
+<form name="form" (ngSubmit)="f.form.valid && onSubmit(f.value)" #f="ngForm" >
+    <div class="form-group row">
+        <div *ngFor="let q of questions;let i=index">
+        <label for="UserQuestions">Question:</label>
+        <h2>{{q.questionTitle}}</h2>
+        <div class="row test-left">
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="{{i}}" value="{{q.optionOne}}" #op1=ngModel [(ngModel)]="option"
+            [ngClass]="{'is-invalid':f.submitted && op1.invalid}" required>{{q.optionOne}}
+        </div>
+        <br>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="{{i}}" value="{{q.optionTwo}}" #op1=ngModel [(ngModel)]="option"
+            [ngClass]="{'is-invalid':f.submitted && op1.invalid}" required>{{q.optionTwo}}
+        </div>
+        <br>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="{{i}}" value="{{q.optionThree}}" #op1=ngModel [(ngModel)]="option"
+            [ngClass]="{'is-invalid':f.submitted && op1.invalid}" required>{{q.optionThree}}
+        </div><br>
+        <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="{{i}}" value="{{q.optionFour}}" #op1=ngModel [(ngModel)]="option"
+            [ngClass]="{'is-invalid':f.submitted && op1.invalid}" required>{{q.optionFour}}
+        </div>
+        <br>
+    </div>
+        </div>
+    </div>
+</form>
+-->

@@ -1,0 +1,13 @@
+.col-form-label{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.invalid-feedback{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+button{
+    margin: auto;
+    display: block;
+    font-family: 'Times New Roman', Times, serif;
+}

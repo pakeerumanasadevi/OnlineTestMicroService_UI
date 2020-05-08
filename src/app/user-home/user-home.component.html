@@ -1,0 +1,31 @@
+<app-user-navbar></app-user-navbar>
+<div class="container-fluid">
+    <h1>Student : <b>{{username}}</b></h1>
+    <h2 align="center">Your Test</h2>
+
+<table class="table table-striped" *ngIf="test  else elseBlock">
+    <thead>
+    <tr>
+        <th>Test ID</th>
+        <th>Test Title</th>
+        <th>Test Total Marks</th>
+        <th>Test</th>
+    </tr>
+    </thead>
+    <tbody>
+            <td #id> {{test?.testId}} </td>
+            <td> {{test?.testTitle}} </td>
+            <td> {{test?.testTotalMarks}} </td>
+            <td>
+               <button type="button" class="btn btn-large btn-block btn-success" (click)=taketest(test.testId)>Take Test</button>
+            </td>
+    </tbody>
+</table>
+
+<ng-template #elseBlock>
+    <h4 align="center"> There are no Test to display! </h4>
+</ng-template>
+
+</div>
+
+ 

@@ -1,0 +1,27 @@
+form{
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 10px;
+   
+    width: 400px;
+    margin: auto;
+    box-shadow: 5px 10px;
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000000;
+    
+}
+.btn{
+    display: block;
+    margin: auto;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.link{
+    color: black;
+}
+
