@@ -4,6 +4,16 @@
 <div class="card-body">
 <form name="form" (ngSubmit)="onSubmit(f.value)" #f="ngForm" >
 <div class="container-fluid">
+    <div class="col-md-10 col-md-6 mb-4 card border shadow">
+        <div class="card-body">
+            <h3 align="center">Instructions</h3>
+            <ul>
+                <li>Test contains 2 questions</li>
+                <li>Each question carries 2 marks</li>
+                <li>Each question needs to be answered inorder to submit the test</li>
+            </ul>
+        </div>
+    </div>
     
     <h4 class="text-right">Test ID : <b>{{testid}}</b></h4>
     <h2 align="center">Questions</h2>

@@ -5,8 +5,17 @@ form{
     padding: 10px;
     margin: auto;
     display: block;
+    width: 400px;
+    box-shadow: 3px 10px;
+    border: 1px solid black;
 }
 h3{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    text-shadow: 1px 1px 4px #000000;
 }
+.btn{
+    display: block;
+    margin: auto;
+}
+

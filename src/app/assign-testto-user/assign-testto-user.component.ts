@@ -30,7 +30,7 @@ export class AssignTesttoUserComponent implements OnInit {
   }
   onSubmit(agn:Userdata){
    // this.myservice.assignTestUser(agn).subscribe(
-     this.myservice.assignTestUser(this.userid,this.testId).subscribe(
+     this.myservice.assignTestUser(this.obj1.userid,this.testId).subscribe(
        data=>{
          
        }

@@ -1,74 +1,72 @@
 <div class="container-fluid">
    
-    <h3>SignUp</h3>
+    <h3 align="center">SignUp</h3>
     
     <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
     
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">User ID </label>
-            <div class="col-sm-3">
-            <input type="number" class="form-control" #uid='ngModel' name="userid" ngModel
+        <div class="form-group">
+            <label class="form-label">User ID </label>
+            <input type="number" class="form-control" #uid='ngModel' name="userid" ngModel placeholder="Enter User ID"
              [ngClass]="{'is-invalid':uid.invalid && uid.touched,'is-valid':uid.valid}" required>
              <div *ngIf="uid.errors" class="invalid-feedback">
                  User ID is required
              </div>
         </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">UserName </label>
-            <div class="col-sm-3">
-            <input required minlength="6" type="text" #un='ngModel' name="username" ngModel 
+        <div class="form-group">
+            <label class="form-label">UserName </label>
+            
+            <input required minlength="6" type="text" #un='ngModel' name="username" ngModel placeholder="Enter Username"
             [ngClass]="{'is-invalid':un.invalid && un.touched,'is-valid':un.valid}" class="form-control">
             <div *ngIf="un.errors" class="invalid-feedback">
                 <div [hidden]='!un.errors.required'>
-                    Provide User Name
+                    User Name is required
                 </div>
                 <div *ngIf='un.errors.minlength'>Name should be minimum of 6 characters length</div>
             </div>
-        </div>
+        
         </div>
 
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">UserType </label>
-            <div class="col-sm-3">
-            <input required type="text" #ut='ngModel' name="userType" ngModel 
+        <div class="form-group">
+            <label class="form-label">UserType </label>
+            
+            <input  required type="text" #ut='ngModel' name="userType" ngModel value="student"  placeholder="Enter Student"
             [ngClass]="{'is-invalid':ut.invalid && ut.touched,'is-valid':ut.valid}" class="form-control">
             <div *ngIf="ut.errors" class="invalid-feedback">
                 <div [hidden]='!ut.errors.required'>
                     Provide User Type
                 </div>
             </div>
-        </div>
+       
         </div>
     
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">Password </label>
-            <div class="col-sm-3">
-            <input required minlength="4" type="password" #p='ngModel' name="userPassword" ngModel 
+        <div class="form-group">
+            <label class="form-label">Password </label>
+            
+            <input required minlength="4" type="password" #p='ngModel' name="userPassword" ngModel placeholder="Enter Password"
             [ngClass]="{'is-invalid':p.invalid && p.touched,'is-valid':p.valid}" class="form-control">
             <div *ngIf='p.errors' class="invalid-feedback">
                 <div [hidden]='!p.errors.required'>Provide Password </div>
                 <div *ngIf='p.errors.minlength'>Password should be minimum of 4 characters length</div>
             </div>
-        </div>
+        
         </div>
 
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">PhoneNumber </label>
-            <div class="col-sm-3">
-            <input required minlength="4" type="number" #ph='ngModel' name="userPhoneno" ngModel 
+        <div class="form-group">
+            <label class="form-label">PhoneNumber </label>
+            
+            <input required minlength="4" type="number" #ph='ngModel' name="userPhoneno" ngModel placeholder="Enter PhoneNumber"
             [ngClass]="{'is-invalid':ph.invalid && ph.touched,'is-valid':ph.valid}" class="form-control">
             <div *ngIf="ph.errors" class="invalid-feedback">
                 <div [hidden]='!ph.errors.required'> Provide Phonenumber </div>
                 <div *ngIf='ph.errors.minlength'>Password should be minimum of 4 characters length</div>
             </div>
-        </div>
+        
         </div>
 
-        <div class="form-group row">
-            <label class="col-sm-1 col-form-label">Email ID </label>
-            <div class="col-sm-3">
-            <input required type="email" #ue='ngModel' name="userEmail" ngModel email="true"
+        <div class="form-group">
+            <label class="form-label">Email ID </label>
+           
+            <input required type="email" #ue='ngModel' name="userEmail" ngModel email="true" placeholder="Enter Email ID"
             [ngClass]="{'is-invalid':ue.invalid && ue.touched,'is-valid':ue.valid}" class="form-control">
             <div *ngIf="ue.errors" class="invalid-feedback">
                 <div [hidden]='!ue.errors.required'>
@@ -76,7 +74,7 @@
                 </div>
                 <div *ngIf="ue.errors?.email">Provide correct email</div>
             </div>
-        </div>
+        
         </div>
 
     

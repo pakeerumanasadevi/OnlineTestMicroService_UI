@@ -29,7 +29,7 @@
             <td>{{e.optionFour}}</td>
             <td>{{e.rightAnswer}} </td>
             <td>{{e.questionMarks}} </td>
-         <!--   <td *ngIf="e.test!=null; else elsetest">{{e.test.testId}}</td>-->
+            <td *ngIf="e.test!=null; else elsetest">{{e.test.testId}}</td>
             <td>
                 <button type="button" class="btn btn-large btn-block btn-secondary" (click)=assign(e)>Assign</button>
              </td>

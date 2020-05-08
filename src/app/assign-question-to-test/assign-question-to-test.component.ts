@@ -9,17 +9,18 @@ import { Router } from '@angular/router';
 })
 export class AssignQuestionToTestComponent implements OnInit {
 
+  obj1: any;
   questionId:number;
   testId:number;
   constructor(private myservice: MyserviceService, private router: Router) {
-
+    this.obj1 = this.myservice.assignQtoTMethod();
    }
 
   ngOnInit(): any {
   }
   onSubmit(agn:Questions){
     // this.myservice.assignTestUser(agn).subscribe(
-      this.myservice.assignTestQuestion(this.testId,this.questionId).subscribe(
+      this.myservice.assignTestQuestion(this.testId,this.obj1.questionId).subscribe(
         data=>{
           
         }
