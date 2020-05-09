@@ -73,7 +73,10 @@
               </div> 
         </div>
 
-        
+        <div class="row">
         <input [disabled]="updQuestionForm.invalid" type="submit" value="Update" class="btn btn-success">
+        <button routerLink="/listQuestions" class="btn btn-secondary">Back</button>
+        </div>
 
     </form>
+    <h4>{{message}}</h4>

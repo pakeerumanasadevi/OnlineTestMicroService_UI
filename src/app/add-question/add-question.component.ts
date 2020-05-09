@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AddQuestionComponent implements OnInit {
 
-  message: string;
+ 
   constructor(private myservice: MyserviceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -18,9 +18,9 @@ export class AddQuestionComponent implements OnInit {
     
     console.log(addQ);
      this.myservice.addQues(addQ).subscribe(data => {
-      this.message=data});
+      });
       console.log('in addQuestion.ts');
-      this.router.navigate(['listQuestions']);
+    //  this.router.navigate(['listQuestions']);
   }
 
 }

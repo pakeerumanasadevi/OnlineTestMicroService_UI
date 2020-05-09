@@ -1,4 +1,4 @@
-label{
+label,h4{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
 }
@@ -6,8 +6,12 @@ label{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
 }
-.btn{
+.btn-success{
     display: block;
     margin: auto;
     font-family: 'Times New Roman', Times, serif;
+}
+.btn-secondary{
+    font-family: 'Times New Roman', Times, serif;
+   
 }

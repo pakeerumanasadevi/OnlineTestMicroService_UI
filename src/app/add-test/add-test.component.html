@@ -1,4 +1,6 @@
 <form name="form" #details="ngForm" (ngSubmit)="onSubmit(details.value) " validate >
+
+  
     <div class="form-group">  
     <label class="col-form-label" required="true">Test ID</label>
     <input type="number" class="form-control" name="testId" ngModel [ngClass]="{'is-invalid':Id.invalid && Id.touched,'is-valid':Id.valid}"
@@ -26,7 +28,10 @@
     </div> 
   </div>
  
+  <div class="row">
    <button class="btn btn-success" type="submit" [disabled]="!details.form.valid">Add Test</button>
+   <button routerLink="/listTest" class="btn btn-secondary">Back</button>
+  </div>
      
   </form>
   

@@ -25,8 +25,11 @@
                 Enter Marks 
               </div> 
         </div>
-
+        <div class="row">
+           <input [disabled]="updTestForm.invalid" type="submit" value="Update" class="btn btn-success">
+           <button routerLink="/listTest" class="btn btn-secondary">Back</button>
+        </div>
         
-        <input [disabled]="updTestForm.invalid" type="submit" value="Update" class="btn btn-success">
-
     </form>
+    <h4>{{message}}</h4>
+    </div>

@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
      this.myservice.addUser(addemp).subscribe(data => {
       this.message=data});
       console.log('in signup.ts');
-      this.router.navigate(['login']);
+     this.router.navigate(['login']);
   }
 
 }

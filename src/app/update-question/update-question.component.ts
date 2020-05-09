@@ -25,7 +25,7 @@ export class UpdateQuestionComponent implements OnInit {
       this.message = data
     });
     console.log('after real update in update question.ts');
-     return this.router.navigate(['listQuestions']);
+    // return this.router.navigate(['listQuestions']);
   }
 
 }

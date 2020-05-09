@@ -22,6 +22,6 @@ export class UpdateTestComponent implements OnInit {
     this.myservice.onUpdateTest(ut).subscribe(data=>{
       this.message=data
     });
-    return this.router.navigate(['listTest']);
+   // return this.router.navigate(['listTest']);
   }
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AddTestComponent implements OnInit {
 
-  message: string;
+ 
   constructor(private myservice: MyserviceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -17,8 +17,8 @@ export class AddTestComponent implements OnInit {
   onSubmit(addT:Test):any{
     console.log(addT);
      this.myservice.addTest(addT).subscribe(data => {
-      this.message=data});
+     });
       console.log('in addTest.ts');
-      this.router.navigate(['listTest']);
+    //  this.router.navigate(['listTest']);
   }
 }

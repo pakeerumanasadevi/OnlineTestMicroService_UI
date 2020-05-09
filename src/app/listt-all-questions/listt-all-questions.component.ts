@@ -15,6 +15,7 @@ export class ListtAllQuestionsComponent implements OnInit {
   ngOnInit(): any {
     this.myservice.getQuestions().subscribe( 
       response => this.handleSuccessfulResponse(response),
+      
       );
   }
 

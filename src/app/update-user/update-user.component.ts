@@ -20,7 +20,7 @@ export class UpdateUserComponent implements OnInit {
      this.myservice.onUpdate(uemployee).subscribe(data => {
       this.message = data
     });
-     return this.router.navigate(['listUser']);
+    // return this.router.navigate(['listUser']);
   }
   ngOnInit(): void {
   }

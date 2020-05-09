@@ -1,4 +1,4 @@
-.col-form-label{
+.col-form-label,.btn-secondary{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
 }
@@ -6,7 +6,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
 }
-button{
+.btn-success{
     margin: auto;
     display: block;
     font-family: 'Times New Roman', Times, serif;
