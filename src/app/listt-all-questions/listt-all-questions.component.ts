@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ListtAllQuestionsComponent implements OnInit {
 
+  flag=false;
   message: string;
   Ques:Questions[];
   constructor(private myservice: MyserviceService, private router: Router) { }
@@ -29,10 +30,16 @@ export class ListtAllQuestionsComponent implements OnInit {
     this.router.navigate(['/updateQuestion']); //updating the question
     console.log('end of list all question update button')
   }
+  
   delete(deleteques: Questions): any {
+    console.log('list questions delete')
     this.myservice.deleteQues(deleteques.questionId).subscribe(data => {
-      this.message = data
-    });
+      this.flag=true;
+      this.message = data;
+      
+    }
+    
+    );
   }
   assign(t:Questions){
     this.myservice.assignQtoT(t);

@@ -12,6 +12,7 @@ export class UpdateTestComponent implements OnInit {
   obj1: any;
   message: string;
   test:Test[];
+  flag=false;
   constructor(private myservice: MyserviceService, private router: Router) { 
     this.obj1=this.myservice.updateTestMethod();
   }
@@ -20,6 +21,7 @@ export class UpdateTestComponent implements OnInit {
   }
   onUpdateTest(ut:Test):any{
     this.myservice.onUpdateTest(ut).subscribe(data=>{
+      this.flag=true;
       this.message=data
     });
    // return this.router.navigate(['listTest']);

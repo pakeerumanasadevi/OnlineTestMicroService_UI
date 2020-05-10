@@ -12,6 +12,7 @@ export class UpdateQuestionComponent implements OnInit {
   obj1: any;
   message: string;
   ques:Questions[];
+  flag=false;
   constructor(private myservice: MyserviceService, private router: Router) {
     console.log('updtaQuestion method in update question.ts');
     this.obj1 = this.myservice.updateQuesMethod();
@@ -22,6 +23,7 @@ export class UpdateQuestionComponent implements OnInit {
   onUpdateQuestion(uq:Questions):any{
     console.log('before real update in update question.ts');
     this.myservice.onUpdateQuestion(uq).subscribe(data => {
+      this.flag=true;
       this.message = data
     });
     console.log('after real update in update question.ts');

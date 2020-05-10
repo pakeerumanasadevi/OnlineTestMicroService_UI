@@ -12,6 +12,8 @@ export class ListAllUsersComponent implements OnInit {
   
   message: string;
   employees: Userdata[];
+  error: string;
+  flag: boolean;
   constructor(private myservice: MyserviceService, private router: Router) {
   }
 
@@ -33,8 +35,16 @@ export class ListAllUsersComponent implements OnInit {
   }
   delete(deleteemployee: Userdata): any {
     this.myservice.delete(deleteemployee.userid).subscribe(data => {
+      this.flag=true;
       this.message = data
-    });
+    },
+    error => { 
+      if(error.status==500){
+        console.log(error.error);
+      this.error ="Delete Unsuccesful";
+      this.flag=false;
+     }}
+    );
    // this.router.navigate(['/listemp']);
   }
   assign(a:Userdata){

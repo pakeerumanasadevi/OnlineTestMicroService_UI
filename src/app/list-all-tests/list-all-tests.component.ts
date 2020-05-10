@@ -11,6 +11,8 @@ export class ListAllTestsComponent implements OnInit {
 
   message: string;
   test:Test[];
+ 
+  flag: boolean;
   constructor(private myservice: MyserviceService, private router: Router) { }
 
   ngOnInit(): any {
@@ -22,10 +24,19 @@ export class ListAllTestsComponent implements OnInit {
     this.test = response;
     console.log(response);
   }
+  error:string;
   delete(deletetest: Test): any {
     this.myservice.deleteTest(deletetest.testId).subscribe(data => {
+      this.flag=true;
       this.message = data
-    });
+    },
+    error => { 
+      if(error.status==500){
+        console.log(error.error);
+      this.error ="Delete unsuccesful because this Test ID is already assigned";
+      this.flag=false;
+     }}
+    );
   }
   update(updateTest: Test) {
     this.myservice.updateTest(updateTest);

@@ -1,4 +1,4 @@
-
+<app-home></app-home>
 <div class="container">
     <form #assign="ngForm" (ngSubmit)="onSubmit(assign.value)" >
 
@@ -19,8 +19,13 @@
             </div>
         </div>
 
+        <div class="row">
         <input [disabled]="assign.invalid" type="submit" value="Assign" class="btn btn-success">
-
+        <button routerLink="/listQuestions" class="btn btn-secondary">Back</button>
+        </div>
+        <br>
+<p class="alert alert-success" *ngIf="flag">{{error}}</p>
+<p class="alert alert-danger" *ngIf="flag==false">{{error}}</p>
     </form>
  
    

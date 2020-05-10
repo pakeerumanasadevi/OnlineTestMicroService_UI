@@ -160,7 +160,7 @@ getResultReport(id:number){
     return this.assuid;
   }
 
-  public assignTestQuestion(tid: number,qid:number) {
+  public assignTestQuestion(tid: number,qid:number):Observable<any> {
     console.log("ins service assign test to question");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
     return this.httpService.put("http://localhost:8762/admin/test/"+tid+"/"+qid,  { headers, responseType: 'text'});

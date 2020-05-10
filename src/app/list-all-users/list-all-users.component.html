@@ -51,6 +51,7 @@
         <p align="center">No Test</p>
     </ng-template>
     <div>
-        <h4>{{message}}</h4>
+        <p class="alert alert-success" *ngIf="flag">{{message}}</p>
+    <p class="alert alert-danger" *ngIf="flag==false">{{error}}</p>
     </div>
 </div>

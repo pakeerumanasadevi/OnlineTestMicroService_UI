@@ -46,7 +46,7 @@
 </table>
 <button class="btn btn-secondary float-right" routerLink="/addQuestion"><i class="fa fa-plus" aria-hidden="true"></i> ADD</button>
 <div>
-    <h4>{{message}}</h4>
+    <h5 class="alert alert-success" *ngIf="flag">{{message}}</h5>
 </div>
 </div>
 
