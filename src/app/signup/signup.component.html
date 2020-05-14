@@ -7,10 +7,14 @@
         <div class="form-group">
             <label class="form-label">User ID </label>
             <input type="number" class="form-control" #uid='ngModel' name="userid" ngModel placeholder="Enter User ID"
-             [ngClass]="{'is-invalid':uid.invalid && uid.touched,'is-valid':uid.valid}" required>
+             [ngClass]="{'is-invalid':uid.invalid && uid.touched,'is-valid':uid.valid}" required pattern="^([1-9]\d*)$">
              <div *ngIf="uid.errors" class="invalid-feedback">
+                <div [hidden]='!uid.errors.required'>
                  User ID is required
+                </div>
+                 <div *ngIf='uid.errors.pattern'>Id must not begin with 0 and it should not be negative</div>
              </div>
+             
         </div>
         <div class="form-group">
             <label class="form-label">UserName </label>
@@ -26,17 +30,18 @@
         
         </div>
 
+
         <div class="form-group">
-            <label class="form-label">UserType </label>
+            <label class="form-label">UserType </label>&nbsp;&nbsp;
             
-            <input  required type="text" #ut='ngModel' name="userType" ngModel value="student"  placeholder="Enter Student"
-            [ngClass]="{'is-invalid':ut.invalid && ut.touched,'is-valid':ut.valid}" class="form-control">
-            <div *ngIf="ut.errors" class="invalid-feedback">
-                <div [hidden]='!ut.errors.required'>
-                    Provide User Type
-                </div>
+            <input  type="radio" name="userType" #ut="ngModel" ngModel
+        [ngClass]="{'is-invalid':ut.touched && ut.invalid}" value="student" required>Student
+        <div *ngIf="ut.errors" class="invalid-feedback">
+            <div [hidden]='!ut.errors.required'>
+                User Type is required
             </div>
-       
+        </div>
+            
         </div>
     
         <div class="form-group">
@@ -54,11 +59,11 @@
         <div class="form-group">
             <label class="form-label">PhoneNumber </label>
             
-            <input required minlength="4" type="number" #ph='ngModel' name="userPhoneno" ngModel placeholder="Enter PhoneNumber"
-            [ngClass]="{'is-invalid':ph.invalid && ph.touched,'is-valid':ph.valid}" class="form-control">
+            <input required type="number" #ph='ngModel' name="userPhoneno" ngModel placeholder="Enter PhoneNumber"
+            [ngClass]="{'is-invalid':ph.invalid && ph.touched,'is-valid':ph.valid}" class="form-control" pattern="^((\\+91-?)|0)?[0-9]{10}$">
             <div *ngIf="ph.errors" class="invalid-feedback">
                 <div [hidden]='!ph.errors.required'> Provide Phonenumber </div>
-                <div *ngIf='ph.errors.minlength'>Password should be minimum of 4 characters length</div>
+                <div *ngIf='ph.errors.pattern'>Phonenumber should be of 10 characters length</div>
             </div>
         
         </div>
@@ -67,12 +72,13 @@
             <label class="form-label">Email ID </label>
            
             <input required type="email" #ue='ngModel' name="userEmail" ngModel email="true" placeholder="Enter Email ID"
-            [ngClass]="{'is-invalid':ue.invalid && ue.touched,'is-valid':ue.valid}" class="form-control">
+            [ngClass]="{'is-invalid':ue.invalid && ue.touched,'is-valid':ue.valid}" class="form-control" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <div *ngIf="ue.errors" class="invalid-feedback">
                 <div [hidden]='!ue.errors.required'>
                     Provide Email Id
                 </div>
-                <div *ngIf="ue.errors?.email">Provide correct email</div>
+                <div *ngIf="ue.errors.pattern">Provide correct email</div>
             </div>
         
         </div>

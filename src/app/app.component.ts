@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'Onlinetest';
   constructor(private router:Router){}
   ngOnInit(): void {
-  //  this.router.navigate(['login']);
+  // this.router.navigate(['login']);
   }
 }

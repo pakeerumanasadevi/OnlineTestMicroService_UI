@@ -25,7 +25,7 @@
 
         <div class="form-group">
             <label>UserType </label>
-            <input required minlength="1" type="text" [(ngModel)]="obj1.userType" #ut='ngModel' name="userType"
+            <input required minlength="1" type="text" readonly [(ngModel)]="obj1.userType" #ut='ngModel' name="userType"
             [ngClass]="{'is-invalid':ut.invalid && ut.touched,'is-valid':ut.valid}"   ngModel class="form-control">
             <div *ngIf="ut.errors" class="invalid-feedback">
                 <div [hidden]='!ut.errors.required'>
@@ -47,22 +47,23 @@
         <div class="form-group">
             <label>PhoneNumber </label>
             <input required  type="number" [(ngModel)]="obj1.userPhoneno" #ph='ngModel' name="userPhoneno" ngModel
-            [ngClass]="{'is-invalid':ph.invalid && ph.touched,'is-valid':ph.valid}" class="form-control">
+            [ngClass]="{'is-invalid':ph.invalid && ph.touched,'is-valid':ph.valid}" class="form-control" pattern="^((\\+91-?)|0)?[0-9]{10}$">
             <div *ngIf="ph.errors" class="invalid-feedback">
                 <div [hidden]='!ph.errors.required'> Provide Phonenumber </div>
-                <div *ngIf='ph.errors.minlength'>Password should be minimum of 4 characters length</div>
+                <div *ngIf='ph.errors.pattern'>Phonenumber should be of 10 characters length</div>
             </div>
         </div>
 
         <div class="form-group">
             <label>Email ID </label>
             <input required type="email" [(ngModel)]="obj1.userEmail" #ue='ngModel' name="userEmail" email="true"
-            [ngClass]="{'is-invalid':ue.invalid && ue.touched,'is-valid':ue.valid}"  ngModel class="form-control">
+            [ngClass]="{'is-invalid':ue.invalid && ue.touched,'is-valid':ue.valid}"  ngModel class="form-control"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             <div *ngIf="ue.errors" class="invalid-feedback">
                 <div [hidden]='!ue.errors.required'>
                     Provide Email Id
                 </div>
-                <div *ngIf="ue.errors?.email">Provide correct email</div>
+                <div *ngIf="ue.errors.pattern">Provide correct email</div>
             </div>
         </div>
        

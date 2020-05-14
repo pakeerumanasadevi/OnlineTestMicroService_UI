@@ -47,7 +47,7 @@
 
   <div class="form-group">
     <label class="col-form-label">Option 4</label>
-    <input type="text" class="form-control" name="optionFour" #opt4="ngModel"
+    <input type="text" class="form-control" name="optionFour" #opt4="ngModel" 
      [ngClass]="{'is-invalid':opt4.invalid && opt4.touched,'is-valid':opt4.valid}"required ngModel/>
      <div *ngIf="opt4.errors" class="invalid-feedback">
       Enter Option 
